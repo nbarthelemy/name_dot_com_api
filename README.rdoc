@@ -4,8 +4,8 @@ This gem allows you to interact with the name.com api via ruby.
 
 == Basic Usage
 
-client = NameDotComApi::Client.new('< username >','< api_token >', < test_mode >)
-response = client.check_domain('< domain_name >')
+	client = NameDotComApi::Client.new('< username >','< api_token >', < test_mode >)
+	response = client.check_domain('< domain_name >')
 
 * Please see lib/name_dot_com_api/client.rb and specs for additional details on usage
 

@@ -46,7 +46,7 @@ module NameDotComApi
     def http
       http              = Net::HTTP.new(url.host, url.port)
       http.use_ssl      = url.is_a?(URI::HTTPS)
-      http.verify_mode  = OpenSSL::SSL::VERIFY_NONE if http.use_ssl
+      http.verify_mode  = OpenSSL::SSL::VERIFY_NONE if http.use_ssl?
       http.read_timeout = timeout || 60 # Net::HTTP default 60 seconds
       http.set_debug_output $stderr if test_mode
       http

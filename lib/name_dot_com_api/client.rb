@@ -133,7 +133,7 @@ module NameDotComApi
     # ])
     def create_domain(domain, period, nameservers, contacts)
       connection.post '/domain/create', {
-        'domain'      => domain,
+        'domain_name' => domain,
         'period'      => period,
         'nameservers' => nameservers,
         'contacts'    => contacts,

@@ -131,7 +131,7 @@ module NameDotComApi
     #     'email'        => 'john@example.net'
     #   }
     # ])
-    def create_domain(domain, period, nameservers, contacts)
+    def create_domain(domain, period = 1, nameservers = nil, contacts = nil)
       connection.post '/domain/create', {
         'domain_name' => domain,
         'period'      => period,

@@ -132,13 +132,14 @@ module NameDotComApi
     #   }
     # ])
     def create_domain(domain, period = 1, nameservers = nil, contacts = nil)
-      connection.post '/domain/create', {
+      options = {
+        'username'    => connection.username,
         'domain_name' => domain,
-        'period'      => period,
-        'nameservers' => nameservers,
-        'contacts'    => contacts,
-        'username'    => connection.username
+        'period'      => period
       }
+      options['nameservers'] = nameservers if nameservers.is_a?(Array)
+      options['contacts'] = contacts if contacts.is_a?(Array)
+      connection.post '/domain/create', options
     end
 
     # response = client.get_domain('example.com')

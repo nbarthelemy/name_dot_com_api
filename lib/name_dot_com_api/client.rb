@@ -151,7 +151,7 @@ module NameDotComApi
         'domain_name' => domain,
         'period'      => period
       }
-      connection.post '/api/order', options
+      connection.post '/order', options
     end
 
 

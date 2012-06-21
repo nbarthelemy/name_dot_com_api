@@ -147,10 +147,11 @@ module NameDotComApi
 
     def renew_domain(domain, period = 1)
       options = {
+        'order_type'  => 'domain/renew',
         'domain_name' => domain,
-        'period'      => period,
+        'period'      => period
       }
-      connection.post '/domain/renew', options
+      connection.post '/api/order', options
     end
 
 

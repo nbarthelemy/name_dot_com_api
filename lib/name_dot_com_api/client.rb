@@ -150,7 +150,7 @@ module NameDotComApi
         'domain_name' => domain,
         'period'      => period,
       }
-      connection.post '/domain/create', options
+      connection.post '/domain/renew', options
     end
 
 

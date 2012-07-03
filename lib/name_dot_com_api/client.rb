@@ -144,6 +144,21 @@ module NameDotComApi
       connection.post '/domain/create', options
     end
 
+
+    def renew_domain(domain, period = 1)
+      options = {
+        'items' => [
+          {
+            'order_type' => 'domain/renew',
+            'domain_name' => domain,
+            'period' => period
+          }
+        ]
+      }
+      connection.post '/order', options
+    end
+
+
     # response = client.get_domain('example.com')
     def get_domain(domain)
       connection.get "/domain/get/#{domain}"

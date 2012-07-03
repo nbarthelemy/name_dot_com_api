@@ -169,6 +169,12 @@ describe NameDotComApi do
       check_for_successful_response(response)
     end
 
-  end
+    it "can renew a domain" do
+      stub_request(:post, "#{base_url}/domain/renew").
+        to_return(successful_json_response)
 
+      response = @client.renew_domain(@domain, 1)
+      check_for_successful_response(response)
+    end
+  end
 end
